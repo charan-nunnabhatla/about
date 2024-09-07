@@ -12,7 +12,6 @@ Hi there! I’m Charan, a passionate developer and tech enthusiast. . I’m alwa
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=charan-nunnabhatla&theme=radical&no-frame=false&no-bg=true&margin-w=4)
 
-### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
 ### 🔝 Top Contributed Repo
