@@ -1,3 +1,5 @@
+
+---
 # 💫 About Me:
 Hi there! I’m Charan, a passionate developer and tech enthusiast. . I’m always exploring new technologies and diving into app development. Currently, I’m also channeling my creativity into editing my blog to share insights and experiences. Whether I’m coding, learning, or writing, I’m driven by a love for innovation and problem-solving. Thanks for stopping by!
 
