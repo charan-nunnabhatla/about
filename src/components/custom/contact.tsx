@@ -1,7 +1,6 @@
 import BlurFade from "../ui/blur-fade";
 import ContactTile from "./contact-tile";
 import { BsCopy } from "react-icons/bs";
-import { IoMailOutline } from "react-icons/io5";
 import MiniTile from "./mini-tile";
 import { CiLocationOn } from "react-icons/ci";
 import { FaLinkedin } from "react-icons/fa6";
