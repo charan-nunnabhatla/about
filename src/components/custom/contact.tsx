@@ -4,6 +4,8 @@ import { BsCopy } from "react-icons/bs";
 import { IoMailOutline } from "react-icons/io5";
 import MiniTile from "./mini-tile";
 import { CiLocationOn } from "react-icons/ci";
+import { FaLinkedin } from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
 
 export default function Contact() {
   return (
@@ -18,13 +20,19 @@ export default function Contact() {
             <ContactTile
               title="Charan.reings125@gmail.com"
               Icons={[
-                [IoMailOutline, "mail"],
+                [SiGmail, "mail"],
                 [BsCopy, "copy"],
               ]}
             />
             <ContactTile title="+91 7093062349" Icons={[[BsCopy, "copy"]]} />
-            <div className="mx-auto mt-2">
+            <div className=" flex gap-4 mx-auto mt-2">
               <MiniTile title="Hyderabad, TG, IN" Icon={CiLocationOn} />
+              <a
+                target="_black"
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/charan-nunnabhatla/">
+                <MiniTile title="LinkedIn" Icon={FaLinkedin} />
+              </a>
             </div>
           </div>
         </div>
