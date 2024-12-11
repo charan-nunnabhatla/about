@@ -15,7 +15,7 @@ export default function ContactTile({ title, Icons }: contactTileType) {
     } else window.open(mailTo, "_blank", "noopener noreferrer");
   };
   return (
-    <div className="flex justify-center items-center text-sm h-fit m-2 p-3 rounded-xl bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.1)]">
+    <div className="group flex justify-center items-center text-sm h-fit m-2 p-3 rounded-xl bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.18)]">
       <div className="mr-auto">{title}</div>
       <div className="flex gap-4">
         {Icons.map(([Icon, id], index) => {
@@ -23,7 +23,7 @@ export default function ContactTile({ title, Icons }: contactTileType) {
             <div key={index} className="">
               <Icon
                 onClick={() => handleClick(id)}
-                className="hover:cursor-pointer"
+                className="sm:opacity-100 md:opacity-0 duration-300 transition-all group-hover:opacity-100 hover:cursor-pointer"
               />
             </div>
           );

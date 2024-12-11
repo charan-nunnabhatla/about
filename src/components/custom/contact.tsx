@@ -14,7 +14,7 @@ export default function Contact() {
         <h1 className="bg-clip-text text-transparent bg-gradient-to-tr from-pink-300 to-blue-400 text-center text-5xl md:text-6xl lg:text-7xl font-bold mb-3 select-none  ">
           Get In Touch
         </h1>
-        <div className="flex justify-center flex-col md:flex-row  items-center w-full shadow-md shadow-blue-300 h-fit rounded-xl ">
+        <div className="flex justify-center flex-col max-w-[95%] md:max-w-[90%] lg:max-w-[80%] mx-auto md:flex-row items-center w-full shadow-md shadow-blue-300 h-fit rounded-xl ">
           <div className="flex justify-center flex-col  w-full h-fit m-3 p-2">
             <ContactTile
               title="Charan.reings125@gmail.com"
@@ -24,7 +24,7 @@ export default function Contact() {
               ]}
             />
             <ContactTile title="+91 7093062349" Icons={[[BsCopy, "copy"]]} />
-            <div className=" flex gap-4 mx-auto mt-2">
+            <div className="font-bold flex gap-4 mx-auto mt-2">
               <MiniTile title="Hyderabad, TG, IN" Icon={CiLocationOn} />
               <a
                 target="_black"
