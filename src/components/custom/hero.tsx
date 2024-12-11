@@ -18,7 +18,7 @@ export default function Hero() {
         </div>
         <img
           className="size-[7em] mx-5 rounded-[50%]"
-          src="../src/assets/IMG_1614.png"
+          src="/IMG_1614.png"
           alt="profile picture"
         />
       </div>
