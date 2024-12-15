@@ -27,6 +27,8 @@ function App() {
           "inset-y-[-30%] h-[100%] w-[100%] skew-y-12 "
         )}
       />
+      <div className="w-[90%] mx-auto border border-gray-500 "></div>
+      <div className="text-xs text-gray-500 text-center p-3">Last Update: Dec 2024</div>
     </div>
   );
 }
