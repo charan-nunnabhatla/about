@@ -5,10 +5,10 @@ export default function Hero() {
     <BlurFade delay={0.8}>
       <div
         id="hero"
-        className="flex items-center justify-center overflow-hidden my-5">
+        className="flex items-center justify-center my-5 overflow-hidden">
         <div
           id="name"
-          className="text-[1.5em] md:text-[3em] lg:text[3em] whitespace-nowrap m-4 font-bold bg-transparent text-slate-400">
+          className="text-[1.5em] md:text-[3em] lg:text[3em] whitespace-nowrap m-4 font-bold bg-transparent text-[rgb(82,122,104)]">
           Hi, I'm Charan 👋
           <div
             id="intro"
