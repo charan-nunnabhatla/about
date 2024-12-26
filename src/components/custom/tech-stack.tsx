@@ -8,10 +8,10 @@ import { FaNodeJs, FaPython, FaReact } from "react-icons/fa";
 
 export default function TechStack() {
   return (
-    <BlurFade delay={1}>
-      <div className="flex flex-col text-lg p-5 font-bold md:text-xl lg:text-2xl">
+    <BlurFade delay={1} inView>
+      <div id="tech-stack" className="flex flex-col items-center justify-center p-5 text-lg font-bold md:h-screen md:text-xl lg:text-2xl">
         <h1>Tech Stack</h1>
-        <div className="flex flex-wrap justify-center flex-row gap-2 select-none p-2 items-center my-3">
+        <div className="flex flex-row flex-wrap items-center justify-center gap-2 p-2 my-3 select-none">
           <MiniTile title="React" Icon={FaReact} />
           <MiniTile title="Flutter" Icon={FaFlutter} />
           <MiniTile title="Python" Icon={FaPython} />

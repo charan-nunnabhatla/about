@@ -2,10 +2,10 @@ import BlurFade from "../ui/blur-fade";
 
 export default function Hero() {
   return (
-    <BlurFade delay={0.8}>
+    <BlurFade delay={0.8} inView>
       <div
         id="hero"
-        className="flex items-center justify-center my-5 overflow-hidden">
+        className="sticky top-0 flex items-center justify-center my-5 overflow-hidden md:block md:h-screen ">
         <div
           id="name"
           className="text-[1.5em] md:text-[3em] lg:text[3em] whitespace-nowrap m-4 font-bold bg-transparent text-[rgb(82,122,104)]">
@@ -13,7 +13,7 @@ export default function Hero() {
           <div
             id="intro"
             className="text-xs font-sans text-slate-300 font-bold whitespace-normal md:text-lg max-w-[30em]">
-              Full Stack Developer | Flutter & React Specialist along with Python
+            Full Stack Developer | Flutter & React Specialist along with Python
           </div>
         </div>
         <img

@@ -12,15 +12,15 @@ export default function Contact() {
     const filePath = "/about/resume.pdf";
     const link = document.createElement("a");
     link.href = filePath;
-    link.download = "CharanNunnabhatlaResume.pdf";
+    link.download = "Charan_Nunnabhatla_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   return (
-    <BlurFade delay={1}>
-      <div className="h-auto p-5 ">
+    <BlurFade delay={1} inView>
+      <div id="contact" className="flex flex-col items-center justify-center p-5 md:h-screen ">
         {/* <h1 className="text-lg font-bold md:text-xl lg:text-2xl ">Contact</h1> */}
         <h1 className="mb-3 text-5xl font-bold text-center text-transparent select-none bg-clip-text bg-gradient-to-tr from-pink-300 to-blue-400 md:text-6xl lg:text-7xl ">
           Get In Touch
