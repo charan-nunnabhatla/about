@@ -97,7 +97,7 @@ export default function AnimatedGridPattern({
       ref={containerRef}
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 h-full w-full fill-gray-400/30 stroke-gray-400/10",
+        "pointer-events-none border absolute inset-0 h-screen -z-10 w-full fill-gray-400/30 stroke-gray-400/10",
         className,
       )}
       {...props}
@@ -118,7 +118,7 @@ export default function AnimatedGridPattern({
           />
         </pattern>
       </defs>
-      <rect width="100%" height="100%" fill={`url(#${id})`} />
+      {/* <rect width="100%" height="100%" fill={`url(#${id})`} /> */}
       <svg x={x} y={y} className="overflow-visible">
         {squares.map(({ pos: [x, y], id }, index) => (
           <motion.rect
