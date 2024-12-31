@@ -28,7 +28,7 @@ export default function Contact() {
         <div className="flex justify-center flex-col max-w-[95%] md:max-w-[90%] lg:max-w-[80%] mx-auto md:flex-row items-center w-full shadow-md shadow-blue-300 h-fit rounded-xl ">
           <div className="flex flex-col justify-center w-full p-2 m-3 h-fit">
             <ContactTile
-              title="Charan.reings125@gmail.com"
+              title="Charannunnabhatla@gmail.com"
               Icons={[
                 [SiGmail, "mail"],
                 [BsCopy, "copy"],
