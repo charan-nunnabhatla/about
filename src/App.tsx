@@ -6,6 +6,7 @@ import Hero from "./components/custom/hero";
 import Projects from "./components/custom/projects";
 import TechStack from "./components/custom/tech-stack";
 import AnimatedGridPattern from "./components/ui/animated-grid-pattern";
+import { Meteors } from "./components/ui/meteors";
 
 function App() {
   return (
@@ -18,16 +19,18 @@ function App() {
         <Projects />
         <Education />
         <Contact />
-        <AnimatedGridPattern
+        {/* <AnimatedGridPattern
         numSquares={40}
         maxOpacity={0.1}
         duration={1}
         repeatDelay={1}
         className={`
-          "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
+          "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)] -z-10",
           "inset-y-[-30%] h-[100%] w-[100%] skew-y-12 "
         `}
-      />
+      /> */}
+      <Meteors number={10}/>
+
         <div className="w-[90%] mx-auto border border-gray-500 "></div>
         <div className="p-3 text-xs text-center text-gray-500">
           Last Update: Dec 2024
