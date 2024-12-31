@@ -3,7 +3,7 @@ import Tile from "./tile";
 
 export default function Education() {
   return (
-    <BlurFade delay={1}  inView>
+    <BlurFade delay={0.3}  inView>
       <div id="education" className="flex flex-col items-center justify-center p-5 pt-0 md:h-screen">
         <h1 className="mb-3 text-lg font-bold md:text-xl lg:text-2xl">
           Education

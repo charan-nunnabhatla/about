@@ -19,7 +19,7 @@ export default function Contact() {
   };
 
   return (
-    <BlurFade delay={1} inView>
+    <BlurFade delay={0.3} inView>
       <div id="contact" className="flex flex-col items-center justify-center p-5 md:h-screen ">
         {/* <h1 className="text-lg font-bold md:text-xl lg:text-2xl ">Contact</h1> */}
         <h1 className="mb-3 text-5xl font-bold text-center text-transparent select-none bg-clip-text bg-gradient-to-tr from-pink-300 to-blue-400 md:text-6xl lg:text-7xl ">

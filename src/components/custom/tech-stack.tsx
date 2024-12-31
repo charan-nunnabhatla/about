@@ -8,7 +8,7 @@ import { FaNodeJs, FaPython, FaReact } from "react-icons/fa";
 
 export default function TechStack() {
   return (
-    <BlurFade delay={1} inView>
+    <BlurFade delay={0.3} inView>
       <div id="tech-stack" className="flex flex-col items-center justify-center p-5 text-lg font-bold md:h-screen md:text-xl lg:text-2xl">
         <h1>Tech Stack</h1>
         <div className="flex flex-row flex-wrap items-center justify-center gap-2 p-2 my-3 select-none">

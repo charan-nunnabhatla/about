@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Header() {
   const [currentItem, setCurrentItem] = useState(0);
-  const activeColor = '';
+  // const activeColor = '';
   return (
     <nav className="sticky top-0 z-10 hidden w-full h-auto backdrop-blur-sm md:block lg:max-w-[80%] lg:mx-auto">
       <ul className="flex list-none whitespace-nowrap">
