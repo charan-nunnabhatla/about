@@ -16,8 +16,8 @@ export default function Projects() {
             link="https://charan-nunnabhatla.github.io/dotted-life/"
           />
           <Tile
-            title="Grocery Webapp"
-            sub_title="The E-Commerce Web App"
+            title="Grocery Website"
+            sub_title="The E-Commerce Website"
             date="Mar 2024"
             link="https://charan-nunnabhatla.github.io/e-commerce/"
           />

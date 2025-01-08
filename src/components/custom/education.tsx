@@ -5,23 +5,23 @@ export default function Education() {
   return (
     <BlurFade delay={1} >
       <div className="p-5 pt-0">
-        <h1 className="font-bold text-lg md:text-xl lg:text-2xl mb-3">
+        <h1 className="mb-3 text-lg font-bold md:text-xl lg:text-2xl">
           Education
         </h1>
         <Tile
-          title="St.mary's Engineering College"
-          sub_title="B.Tech CSE-AI&ML"
+          title="B.Tech CSE-AI&ML"
+          sub_title="St.Mary's Engineering College"
           date="2020 - 2024"
         />
         <Tile
-          title="Sri Chaitanya Jr. College"
-          sub_title="MPC Intermediate"
-          date="2018 - 2019"
+          title="Intermediate - MPC"
+          sub_title="Sri Chaitanya Jr. College"
+          date="2018 - 2020"
         />
         <Tile
-          title="Nava Jyothi High School"
-          sub_title="SSC"
-          date="2016 - 2018"
+          title="SSC"
+          sub_title="Nava Jyothi High School"
+          date="2018"
         />
       </div>
     </BlurFade>

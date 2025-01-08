@@ -22,8 +22,9 @@ export default function ContactTile({ title, Icons }: contactTileType) {
           return (
             <div key={index} className="">
               <Icon
+                title={id}
                 onClick={() => handleClick(id)}
-                className="sm:opacity-100 md:opacity-0 duration-300 transition-all group-hover:opacity-100 hover:cursor-pointer"
+                className="transition-opacity duration-300 sm:opacity-100 md:opacity-0 group-hover:opacity-100 hover:cursor-pointer"
               />
             </div>
           );
