@@ -5,7 +5,7 @@ export default function Hero() {
     <BlurFade delay={0.8}>
       <div
         id="hero"
-        className="flex items-center justify-center overflow-hidden my-5">
+        className="flex items-center justify-center my-5 overflow-hidden">
         <div
           id="name"
           className="text-[1.5em] md:text-[3em] lg:text[3em] whitespace-nowrap m-4 font-bold bg-transparent text-slate-400">
@@ -13,7 +13,7 @@ export default function Hero() {
           <div
             id="intro"
             className="text-xs font-sans text-slate-300 font-bold whitespace-normal md:text-lg max-w-[30em]">
-              Full Stack Developer | Flutter & React Specialist along with Python
+              Full Stack Developer | Flutter & React Specialist 
           </div>
         </div>
         <img
