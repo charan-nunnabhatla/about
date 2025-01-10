@@ -8,15 +8,7 @@ import { SiGmail } from "react-icons/si";
 import { MdSimCardDownload } from "react-icons/md";
 
 export default function Contact() {
-  const downloadResume = () => {
-    const filePath = "/about/resume.pdf";
-    const link = document.createElement("a");
-    link.href = filePath;
-    link.download = "CharanNunnabhatlaResume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const filePath = "/about/resume.pdf";
 
   return (
     <BlurFade delay={1}>
@@ -25,7 +17,7 @@ export default function Contact() {
         <h1 className="mb-3 text-5xl font-bold text-center text-transparent select-none bg-clip-text bg-gradient-to-tr from-pink-300 to-blue-400 md:text-6xl lg:text-7xl ">
           Get In Touch
         </h1>
-        <div className="flex justify-center flex-col max-w-[95%] md:max-w-[90%] lg:max-w-[80%] mx-auto md:flex-row items-center w-full shadow-md shadow-blue-300 h-fit rounded-xl ">
+        <div className="flex justify-center flex-col max-w-[95%] md:max-w-[90%] lg:max-w-[80%] mx-auto md:flex-row items-center w-full bg-[rgba(73,73,73,0.3)] h-fit rounded-xl">
           <div className="flex flex-col justify-center w-full p-2 m-3 h-fit">
             <ContactTile
               title="Charannunnabhatla@gmail.com"
@@ -43,12 +35,12 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/charan-nunnabhatla/">
                 <MiniTile title="LinkedIn" Icon={FaLinkedin} />
               </a>
-              <div
-                className="hover:cursor-pointer"
-                title="Download resume"
-                onClick={() => downloadResume()}>
+              <a
+                href={filePath}
+                download="CharanNunnabhatlaResume.pdf"
+                title="Download resume">
                 <MiniTile title="Resume" Icon={MdSimCardDownload} />
-              </div>
+              </a>
             </div>
           </div>
         </div>
