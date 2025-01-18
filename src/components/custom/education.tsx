@@ -13,7 +13,7 @@ export default function Education() {
           sub_title="St.Mary's Engineering College"
           date="2020 - 2024"
         />
-        <Tile
+        {/* <Tile
           title="Intermediate - MPC"
           sub_title="Sri Chaitanya Jr. College"
           date="2018 - 2020"
@@ -22,7 +22,7 @@ export default function Education() {
           title="SSC"
           sub_title="Nava Jyothi High School"
           date="2018"
-        />
+        /> */}
       </div>
     </BlurFade>
   );
