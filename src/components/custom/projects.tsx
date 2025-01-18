@@ -10,6 +10,12 @@ export default function Projects() {
         </h1>
         <div className="flex flex-col items-center justify-center my-3">
           <Tile
+            title="Tasks Pro"
+            sub_title="Easyway To Manage Everyday Tasks"
+            date="Jan 2025"
+            link="https://tasks-pro.vercel.app/"
+          />
+          <Tile
             title="Dotted Life"
             sub_title="Calculates The Total Life Spend In Dots"
             date="June 2024"
