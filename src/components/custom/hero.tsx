@@ -1,24 +1,31 @@
 import Lottie from "react-lottie-player";
 import BlurFade from "../ui/blur-fade";
-import hiAnimation from "../../../public/hi-animation.json";
+import hiAnimation from "../../../src/assets/hi-animation.json";
 
 export default function Hero() {
   return (
     <BlurFade delay={0.8}>
       <div
         id="hero"
-        className="flex items-center justify-center my-5 overflow-hidden">
-        <div
-          id="name"
-          className="text-[1.5em] md:text-[3em] lg:text[3em] whitespace-nowrap m-4 font-bold bg-transparent text-slate-400">
-          Hi, I'm Charan
+        className="grid grid-cols-[1fr,1fr] justify-center items-center w-full h-fit mx-3">
+        <div className="flex flex-col items-center col-start-1 col-end-2 mx-1 w-fit h-fit ">
+          <div
+            id="name"
+            className="text-[clamp(2rem,10vw,3rem)] whitespace-nowrap font-bold text-white">
+            Hi, I'm Charan
+          </div>
           <div
             id="intro"
-            className="text-xs font-sans text-slate-300 font-bold whitespace-normal md:text-lg max-w-[30em]">
+            className=" text-xs font-sans text-zinc-500 font-bold whitespace-normal md:text-sm max-w-[30em]">
             Full Stack Developer | Flutter & React Specialist
           </div>
         </div>
-        <Lottie animationData={hiAnimation} play loop className="size-1/4 md:size-3/4"/>
+        <Lottie
+          animationData={hiAnimation}
+          play
+          loop
+          className="col-start-2 col-end-3 md:size-[80%] size-full  self-center mx-auto "
+        />
       </div>
     </BlurFade>
   );
