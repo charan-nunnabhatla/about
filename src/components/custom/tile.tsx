@@ -12,10 +12,13 @@ export default function Tile(props: cardDetails) {
 
   return (
     <div
+      aria-label="tile"
       onClick={() => onClick(props.link)}
       className={`group relative flex w-full  hover:bg-[rgba(73,73,73,0.3)]  ${props.link ? "hover:cursor-pointer" : ""}  h-auto rounded p-2 bg-transparent  `}>
       <section className="mr-auto">
-        <h2 className="inline-flex items-center justify-center text-lg leading-none group-hover:text-white md:text-xl">
+        <h2
+          aria-label={`project title ${props.title}`}
+          className="inline-flex items-center justify-center text-lg leading-none group-hover:text-white md:text-xl">
           {props.title}
           {props.link ? (
             <svg
@@ -35,9 +38,15 @@ export default function Tile(props: cardDetails) {
             <div></div>
           )}
         </h2>
-        <p className="text-sm text-gray-400 md:text-base">{props.sub_title}</p>
+        <p
+          aria-label={props.sub_title}
+          className="text-sm text-gray-400 md:text-base">
+          {props.sub_title}
+        </p>
       </section>
-      <section className="flex items-center justify-center p-3 text-gray-400">
+      <section
+        aria-label={`the project ${props.title} was created on ${props.date}`}
+        className="flex items-center justify-center p-3 text-gray-400">
         {props.date}{" "}
       </section>
     </div>

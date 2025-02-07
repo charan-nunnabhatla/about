@@ -9,6 +9,8 @@ type miniCardTypes = {
 export default function MiniTile({ title, Icon }: miniCardTypes) {
   return (
     <div
+      aria-label={title}
+      title={title}
       className={classNames(
         "flex justify-center items-center py-1 px-2 h-auto w-fit rounded text-white text-xs bg-white/25 hover:bg-white/30"
       )}>
