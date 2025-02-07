@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import About from "./components/custom/about";
 import Contact from "./components/custom/contact";
 import Education from "./components/custom/education";
@@ -22,10 +21,9 @@ function App() {
           maxOpacity={0.1}
           duration={1}
           repeatDelay={1}
-          className={classNames(
-            "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]",
-            "inset-y-[-30%] h-[100%] w-[100%] skew-y-12 "
-          )}
+          className={`mask-image:radal-gradient(800px_circle_at_center,white,transparent) 
+            inset-y-[-30%] h-[100%] w-[100%] skew-y-12
+          `}
         />
       </section>
       <div className="w-[90%] mx-auto border border-gray-500 "></div>
