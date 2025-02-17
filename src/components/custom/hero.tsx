@@ -20,7 +20,7 @@ export default function Hero() {
               id="intro"
               aria-labelledby="intro"
               className=" text-xs font-sans text-zinc-500 font-bold whitespace-normal md:text-sm max-w-[30em]">
-              Full Stack Developer | Flutter & React Specialist
+              MERN Stack & Flutter Developer
             </div>
           </div>
           <Lottie
