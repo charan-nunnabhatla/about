@@ -1,6 +1,5 @@
 import ContactTile from "./contact-tile";
 import { BsCopy } from "react-icons/bs";
-import MiniTile from "./mini-tile";
 import { CiLocationOn } from "react-icons/ci";
 import { FaLinkedin } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";

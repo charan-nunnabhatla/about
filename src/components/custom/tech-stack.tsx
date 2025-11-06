@@ -1,7 +1,7 @@
 import MiniTile from "./mini-tile";
 import { RiTailwindCssFill, RiRobot2Fill } from "react-icons/ri";
 import { SiMongodb, SiNextdotjs, SiOllama } from "react-icons/si";
-import { FaNodeJs, FaPython, FaAws, FaBrain, FaCog, FaDatabase } from "react-icons/fa";
+import { FaNodeJs, FaPython, FaAws, FaCog, FaDatabase } from "react-icons/fa";
 import { HiDocumentText } from "react-icons/hi";
 
 export default function TechStack() {
