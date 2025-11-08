@@ -1,5 +1,6 @@
 import About from "./components/custom/about";
 import Contact from "./components/custom/contact";
+import CustomCursor from "./components/custom/custom-cursor";
 import Education from "./components/custom/education";
 import Experience from "./components/custom/experience";
 import Header from "./components/custom/header";
@@ -10,6 +11,7 @@ import TechStack from "./components/custom/tech-stack";
 function App() {
   return (
     <>
+      <CustomCursor />
       <Header />
       <main className="w-full">
         <Hero />

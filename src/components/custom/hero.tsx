@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <div
       id="hero"
-      className="flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20 min-h-[80vh] sm:min-h-[70vh]">
+      className="flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20">
       <div className="max-w-4xl w-full">
         <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8 md:gap-12">
           <img

@@ -2,9 +2,12 @@ export default function About() {
   return (
     <div id="about" className="px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--near-black)] mb-8 md:mb-12 tracking-tight">
-          About
-        </h2>
+        <div className="flex items-center gap-4 mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--near-black)] tracking-tight whitespace-nowrap">
+            About
+          </h2>
+          <div className="flex-1 h-1 bg-gradient-to-r from-[var(--near-black)] via-[var(--near-black)]/50 to-transparent rounded-full"></div>
+        </div>
         <ul className="relative list-none space-y-0">
           <li className="flex items-start text-base sm:text-lg md:text-xl text-[var(--dark-text)] leading-relaxed relative">
             <div className="relative mr-3 sm:mr-4 pt-1.5" style={{minHeight: '100%'}}>
