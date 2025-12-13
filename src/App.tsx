@@ -13,11 +13,11 @@ function App() {
     <>
       <CustomCursor />
       <Header />
-      <main className="w-full">
+      <main className="w-full relative z-10">
         <Hero />
         <About />
-        <TechStack />
         <Experience />
+        <TechStack />
         <Projects />
         <Education />
         <Contact />

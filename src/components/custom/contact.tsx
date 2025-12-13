@@ -1,11 +1,17 @@
-import ContactTile from "./contact-tile";
-import { BsCopy } from "react-icons/bs";
-import { CiLocationOn } from "react-icons/ci";
-import { FaLinkedin } from "react-icons/fa6";
-import { SiGmail } from "react-icons/si";
-import { MdSimCardDownload } from "react-icons/md";
+import BlurFade from "../ui/blur-fade";
+import { Mail, Copy, Linkedin, FileText, MapPin, Check } from "lucide-react";
+import { useState } from "react";
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+  const email = "charannunnabhatla@gmail.com";
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   const downloadResume = () => {
     const filePath = "/about/resume.pdf";
     const link = document.createElement("a");
@@ -17,60 +23,118 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact" className="px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20">
+    <section id="contact" className="px-4 sm:px-6 md:px-12 lg:px-24 py-16 md:py-28">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center gap-4 mb-4 md:mb-6">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--near-black)] tracking-tight whitespace-nowrap">
-            Get In Touch
-          </h2>
-          <div className="flex-1 h-1 bg-gradient-to-r from-[var(--near-black)] via-[var(--near-black)]/50 to-transparent rounded-full"></div>
-        </div>
-        <p className="text-base sm:text-lg text-[var(--medium-text)] mb-8 md:mb-12">
-          Let's connect and explore how we can work together on innovative projects.
-        </p>
-
-        <div className="space-y-6 sm:space-y-8">
-          <div className="group bg-gradient-to-br from-[var(--accent-blue)]/10 to-[var(--accent-blue)]/5 rounded-2xl p-6 sm:p-8 border border-[var(--accent-blue)]/20 hover:border-[var(--accent-blue)]/40 transition-all duration-300 shadow-lg shadow-[var(--accent-blue)]/10 hover:shadow-xl hover:shadow-[var(--accent-blue)]/20">
-            <ContactTile
-              title="charannunnabhatla@gmail.com"
-              Icons={[
-                [SiGmail, "mail"],
-                [BsCopy, "copy"],
-              ]}
-            />
+        <BlurFade delay={0.1}>
+          <div className="flex items-center gap-4 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] tracking-tight">
+              Let's Talk
+            </h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-[var(--border-hover)] to-transparent" />
           </div>
+        </BlurFade>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        <BlurFade delay={0.2}>
+          <p className="text-lg text-[var(--text-secondary)] mb-4 max-w-2xl">
+            Open to full-time roles in tech and AI.
+          </p>
+          <p className="text-[var(--text-muted)] mb-10">
+            If you're building something that helps people, I'd love to hear about it.
+          </p>
+        </BlurFade>
+
+        {/* Email Card */}
+        <BlurFade delay={0.3}>
+          <div className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-6 md:p-8 mb-6 card-hover">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-[var(--accent-glow)] flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-[var(--accent)]" />
+                </div>
+                <div>
+                  <p className="text-xs text-[var(--text-muted)] mb-1">Email</p>
+                  <p className="text-lg font-medium text-[var(--text-primary)] font-mono">
+                    {email}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-2">
+                <button
+                  onClick={copyEmail}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--surface-hover)] border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--border-hover)] transition-all"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="w-4 h-4 text-emerald-400" />
+                      <span className="text-sm">Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4" />
+                      <span className="text-sm">Copy</span>
+                    </>
+                  )}
+                </button>
+                <a
+                  href={`mailto:${email}`}
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] transition-all"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span className="text-sm font-medium">Send Email</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </BlurFade>
+
+        {/* Action Cards */}
+        <BlurFade delay={0.4}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {/* LinkedIn */}
             <a
-              className="block bg-gradient-to-br from-blue-50/50 to-blue-100/30 rounded-xl p-4 sm:p-5 border border-blue-200/40 hover:border-blue-400/60 hover:shadow-md hover:shadow-blue-200/30 transition-all duration-300 group"
+              href="https://www.linkedin.com/in/charan-nunnabhatla/"
               target="_blank"
               rel="noopener noreferrer"
-              href="https://www.linkedin.com/in/charan-nunnabhatla/">
-              <div className="flex items-center gap-3">
-                <FaLinkedin className="text-2xl text-blue-600 group-hover:text-blue-700 group-hover:scale-110 transition-all duration-300" />
-                <span className="text-sm sm:text-base font-medium text-[var(--near-black)]">LinkedIn</span>
+              className="group flex items-center gap-3 p-4 bg-[var(--surface)] border border-[var(--border)] rounded-xl hover:border-blue-500/50 hover:bg-blue-500/5 transition-all card-hover"
+            >
+              <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
+                <Linkedin className="w-5 h-5 text-blue-400" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-[var(--text-primary)]">LinkedIn</p>
+                <p className="text-xs text-[var(--text-muted)]">Connect</p>
               </div>
             </a>
 
-            <div
-              className="block bg-gradient-to-br from-emerald-50/50 to-emerald-100/30 rounded-xl p-4 sm:p-5 border border-emerald-200/40 hover:border-emerald-400/60 hover:shadow-md hover:shadow-emerald-200/30 transition-all duration-300 group cursor-pointer"
-              title="Download resume"
-              onClick={() => downloadResume()}>
-              <div className="flex items-center gap-3">
-                <MdSimCardDownload className="text-2xl text-emerald-600 group-hover:text-emerald-700 group-hover:scale-110 transition-all duration-300" />
-                <span className="text-sm sm:text-base font-medium text-[var(--near-black)]">Resume</span>
+            {/* Resume */}
+            <button
+              onClick={downloadResume}
+              className="group flex items-center gap-3 p-4 bg-[var(--surface)] border border-[var(--border)] rounded-xl hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all card-hover text-left"
+            >
+              <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
+                <FileText className="w-5 h-5 text-emerald-400" />
               </div>
-            </div>
+              <div>
+                <p className="text-sm font-medium text-[var(--text-primary)]">Resume</p>
+                <p className="text-xs text-[var(--text-muted)]">Download PDF</p>
+              </div>
+            </button>
 
-            <div className="block bg-gradient-to-br from-amber-50/50 to-amber-100/30 rounded-xl p-4 sm:p-5 border border-amber-200/40">
-              <div className="flex items-center gap-3">
-                <CiLocationOn className="text-2xl text-amber-600" />
-                <span className="text-sm sm:text-base font-medium text-[var(--near-black)]">Hyderabad, IN</span>
+            {/* Location */}
+            <div className="flex items-center gap-3 p-4 bg-[var(--surface)] border border-[var(--border)] rounded-xl">
+              <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                <MapPin className="w-5 h-5 text-amber-400" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-[var(--text-primary)]">Hyderabad, IN</p>
+                <p className="text-xs text-[var(--text-muted)]">On-site preferred</p>
               </div>
             </div>
           </div>
-        </div>
+        </BlurFade>
+
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,36 +1,130 @@
-import Tile from "./tile";
+import BlurFade from "../ui/blur-fade";
+import { ExternalLink, Github, ShoppingCart, Grid3X3, Code2 } from "lucide-react";
+
+const projects = [
+  {
+    title: "Grocery Webapp",
+    description: "Full-stack e-commerce with cart persistence, inventory sync, and checkout flows. My deep-dive into production patterns.",
+    icon: ShoppingCart,
+    date: "Mar 2024",
+    link: "https://charan-nunnabhatla.github.io/e-commerce/",
+    tech: ["React", "Node.js", "MongoDB", "Express"],
+    gradient: "from-emerald-500/20 to-teal-500/20",
+  },
+  {
+    title: "Dotted Life",
+    description: "What if you could see your entire life on one screen? Interactive visualization that turns your lifespan into dots.",
+    icon: Grid3X3,
+    date: "Jan 2024",
+    link: "https://charan-nunnabhatla.github.io/dotted-life/",
+    tech: ["React", "TypeScript", "Canvas API"],
+    gradient: "from-purple-500/20 to-pink-500/20",
+  },
+  {
+    title: "Portfolio Website",
+    description: "The site you're on. Built to load fast, read clean, and get out of the way.",
+    icon: Code2,
+    date: "2024",
+    link: "https://charan-nunnabhatla.github.io/about/",
+    github: "https://github.com/charan-nunnabhatla/about",
+    tech: ["React", "TypeScript", "Tailwind", "Framer Motion"],
+    gradient: "from-blue-500/20 to-indigo-500/20",
+  },
+];
 
 export default function Projects() {
   return (
-    <div id="projects" className="px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20">
+    <section id="projects" className="px-4 sm:px-6 md:px-12 lg:px-24 py-16 md:py-28">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center gap-4 mb-8 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--near-black)] tracking-tight whitespace-nowrap">
-            Projects
-          </h2>
-          <div className="flex-1 h-1 bg-gradient-to-r from-[var(--near-black)] via-[var(--near-black)]/50 to-transparent rounded-full"></div>
+        <BlurFade delay={0.1}>
+          <div className="flex items-center gap-4 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] tracking-tight">
+              Projects
+            </h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-[var(--border-hover)] to-transparent" />
+          </div>
+        </BlurFade>
+
+        <div className="grid gap-4">
+          {projects.map((project, index) => (
+            <BlurFade key={index} delay={0.2 + index * 0.1}>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <div className="relative bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 sm:p-6 md:p-8 card-hover overflow-hidden">
+                  {/* Gradient background on hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+
+                  <div className="relative z-10">
+                    {/* Header */}
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${project.gradient} flex items-center justify-center border border-[var(--border)]`}>
+                          <project.icon className="w-5 h-5 text-[var(--text-primary)]" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
+                            {project.title}
+                          </h3>
+                          <span className="text-xs text-[var(--text-muted)] font-mono">
+                            {project.date}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        {project.github && (
+                          <span className="p-2 rounded-lg bg-[var(--surface-hover)] text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors">
+                            <Github className="w-4 h-4" />
+                          </span>
+                        )}
+                        <span className="p-2 rounded-lg bg-[var(--surface-hover)] text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors">
+                          <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-loose mb-4">
+                      {project.description}
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-2.5 py-1 text-xs rounded-md bg-[var(--background)] border border-[var(--border)] text-[var(--text-muted)]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </BlurFade>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 sm:gap-5 md:gap-6">
-          <Tile
-            title="Grocery Webapp"
-            sub_title="Full-stack e-commerce platform with React frontend, Node.js/Express backend, and MongoDB. Features product browsing, cart management, and secure checkout."
-            date="Mar 2024"
-            link="https://charan-nunnabhatla.github.io/e-commerce/"
-          />
-          <Tile
-            title="Dotted Life"
-            sub_title="Interactive life visualization tool built with React and TypeScript. Represents time as dots, helping users visualize their life journey."
-            date="Jan 2024"
-            link="https://charan-nunnabhatla.github.io/dotted-life/"
-          />
-          <Tile
-            title="Portfolio Website"
-            sub_title="Personal portfolio built with React, TypeScript, Vite, and Tailwind CSS. Features responsive design and smooth navigation."
-            date="2024"
-            link="https://charan-nunnabhatla.github.io/about/"
-          />
-        </div>
+
+        {/* More projects hint */}
+        <BlurFade delay={0.5}>
+          <p className="text-center text-sm text-[var(--text-muted)] mt-8">
+            More projects on{" "}
+            <a
+              href="https://github.com/charan-nunnabhatla"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--accent)] hover:underline"
+            >
+              GitHub
+            </a>
+          </p>
+        </BlurFade>
       </div>
-    </div>
+    </section>
   );
 }

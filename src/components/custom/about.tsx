@@ -1,57 +1,69 @@
+import BlurFade from "../ui/blur-fade";
+
+const stats = [
+  { value: "500+", label: "Concurrent Users" },
+  { value: "50,000+", label: "Patient Records" },
+  { value: "90%", label: "Automation Rate" },
+  { value: "60%", label: "API Optimization" },
+];
+
 export default function About() {
   return (
-    <div id="about" className="px-4 sm:px-6 md:px-12 lg:px-24 py-12 sm:py-16 md:py-20">
+    <section id="about" className="px-4 sm:px-6 md:px-12 lg:px-24 py-16 md:py-28">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center gap-4 mb-8 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--near-black)] tracking-tight whitespace-nowrap">
-            About
-          </h2>
-          <div className="flex-1 h-1 bg-gradient-to-r from-[var(--near-black)] via-[var(--near-black)]/50 to-transparent rounded-full"></div>
+        <BlurFade delay={0.1}>
+          <div className="flex items-center gap-4 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] tracking-tight">
+              About
+            </h2>
+            <div className="flex-1 h-px bg-gradient-to-r from-[var(--border-hover)] to-transparent" />
+          </div>
+        </BlurFade>
+
+        <div className="space-y-6 mb-12">
+          <BlurFade delay={0.2}>
+            <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] leading-loose">
+              I'm the engineer behind AI systems at{" "}
+              <span className="text-[var(--text-primary)] font-medium">VectorSoft</span> that
+              help clinicians spend less time on paperwork and more time with patients.
+            </p>
+          </BlurFade>
+
+          <BlurFade delay={0.3}>
+            <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] leading-loose">
+              My work spans conversational AI, workflow automation, and enterprise healthcare
+              platforms—always with a focus on building things that actually{" "}
+              <span className="text-[var(--text-primary)] font-medium">ship and scale</span>.
+            </p>
+          </BlurFade>
+
+          <BlurFade delay={0.4}>
+            <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] leading-loose">
+              From natural language patient intake to automated clinical transcription,
+              I turn complex healthcare challenges into elegant, compliant solutions.
+            </p>
+          </BlurFade>
         </div>
-        <ul className="relative list-none space-y-0">
-          <li className="flex items-start text-base sm:text-lg md:text-xl text-[var(--dark-text)] leading-relaxed relative">
-            <div className="relative mr-3 sm:mr-4 pt-1.5" style={{minHeight: '100%'}}>
-              <span className="flex-shrink-0 w-2 h-2 bg-[var(--near-black)] rounded-full block"></span>
-              <div className="absolute left-1/2 top-3.5 w-0.5 bg-[var(--near-black)]/20 -translate-x-1/2" style={{height: 'calc(100% + 1.5rem)'}}></div>
-            </div>
-            <span className="pb-6 sm:pb-7 md:pb-8">AI Solutions Developer at VectorSoft, a product-based AI healthcare company, designing intelligent software systems that enhance healthcare efficiency and patient engagement</span>
-          </li>
-          <li className="flex items-start text-base sm:text-lg md:text-xl text-[var(--dark-text)] leading-relaxed relative">
-            <div className="relative mr-3 sm:mr-4 pt-1.5" style={{minHeight: '100%'}}>
-              <span className="flex-shrink-0 w-2 h-2 bg-[var(--near-black)] rounded-full block"></span>
-              <div className="absolute left-1/2 top-3.5 w-0.5 bg-[var(--near-black)]/20 -translate-x-1/2" style={{height: 'calc(100% + 1.5rem)'}}></div>
-            </div>
-            <span className="pb-6 sm:pb-7 md:pb-8">Expertise in conversational AI integration, workflow automation, and interactive platform development</span>
-          </li>
-          <li className="flex items-start text-base sm:text-lg md:text-xl text-[var(--dark-text)] leading-relaxed relative">
-            <div className="relative mr-3 sm:mr-4 pt-1.5" style={{minHeight: '100%'}}>
-              <span className="flex-shrink-0 w-2 h-2 bg-[var(--near-black)] rounded-full block"></span>
-              <div className="absolute left-1/2 top-3.5 w-0.5 bg-[var(--near-black)]/20 -translate-x-1/2" style={{height: 'calc(100% + 1.5rem)'}}></div>
-            </div>
-            <span className="pb-6 sm:pb-7 md:pb-8">Built AI-driven features including natural language patient interactions and automated clinical transcription systems (SOAP/DAP notes)</span>
-          </li>
-          <li className="flex items-start text-base sm:text-lg md:text-xl text-[var(--dark-text)] leading-relaxed relative">
-            <div className="relative mr-3 sm:mr-4 pt-1.5" style={{minHeight: '100%'}}>
-              <span className="flex-shrink-0 w-2 h-2 bg-[var(--near-black)] rounded-full block"></span>
-              <div className="absolute left-1/2 top-3.5 w-0.5 bg-[var(--near-black)]/20 -translate-x-1/2" style={{height: 'calc(100% + 1.5rem)'}}></div>
-            </div>
-            <span className="pb-6 sm:pb-7 md:pb-8">Proficient in backend development with Node.js and Python, working with Local LLMs and AWS services</span>
-          </li>
-          <li className="flex items-start text-base sm:text-lg md:text-xl text-[var(--dark-text)] leading-relaxed relative">
-            <div className="relative mr-3 sm:mr-4 pt-1.5" style={{minHeight: '100%'}}>
-              <span className="flex-shrink-0 w-2 h-2 bg-[var(--near-black)] rounded-full block"></span>
-              <div className="absolute left-1/2 top-3.5 w-0.5 bg-[var(--near-black)]/20 -translate-x-1/2" style={{height: 'calc(100% + 1.5rem)'}}></div>
-            </div>
-            <span className="pb-6 sm:pb-7 md:pb-8">Achieved 90% automation in large-scale data migration from PDF/Excel to MongoDB, improving data accuracy and accessibility</span>
-          </li>
-          <li className="flex items-start text-base sm:text-lg md:text-xl text-[var(--dark-text)] leading-relaxed relative">
-            <div className="relative mr-3 sm:mr-4 pt-1.5">
-              <span className="flex-shrink-0 w-2 h-2 bg-[var(--near-black)] rounded-full block"></span>
-            </div>
-            <span>Detail-oriented professional with strong problem-solving skills, thriving in both independent and fast-paced team environments</span>
-          </li>
-        </ul>
+
+        {/* Stats Grid */}
+        <BlurFade delay={0.5}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-[var(--surface)] border border-[var(--border)] rounded-xl p-6 text-center card-hover"
+              >
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold font-mono text-[var(--text-primary)] mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-[var(--text-muted)]">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </BlurFade>
       </div>
-    </div>
+    </section>
   );
 }

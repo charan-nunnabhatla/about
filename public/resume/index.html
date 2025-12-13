@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nunnabhatla Kali Charan - Resume</title>
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #1f2937;
+      background: #f8fafc;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Resume Container */
+    .resume {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      background: white;
+      padding: 36px 42px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .resume {
+        margin: 0;
+        padding: 32px 36px;
+        box-shadow: none;
+      }
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 3px solid #1e3a5f;
+    }
+
+    .name {
+      font-size: 32pt;
+      font-weight: 700;
+      color: #1e3a5f;
+      letter-spacing: -1px;
+      margin-bottom: 6px;
+    }
+
+    .title {
+      font-size: 13pt;
+      color: #3b82f6;
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-size: 9pt;
+      color: #4b5563;
+    }
+
+    .contact-row a {
+      color: #4b5563;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-row a:hover {
+      color: #3b82f6;
+    }
+
+    .separator {
+      color: #d1d5db;
+      margin: 0 4px;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #1e3a5f;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid #e5e7eb;
+    }
+
+    /* Summary */
+    .summary {
+      font-size: 10pt;
+      color: #374151;
+      line-height: 1.7;
+    }
+
+    .summary strong {
+      color: #1e3a5f;
+      font-weight: 600;
+    }
+
+    /* Experience */
+    .experience-item {
+      margin-bottom: 14px;
+      padding-left: 12px;
+      border-left: 3px solid #3b82f6;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .company {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1e3a5f;
+    }
+
+    .date {
+      font-size: 9pt;
+      color: #6b7280;
+      font-weight: 500;
+    }
+
+    .role {
+      font-size: 10pt;
+      color: #3b82f6;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 5px;
+      color: #374151;
+      font-size: 9.5pt;
+      line-height: 1.5;
+    }
+
+    .bullets li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #3b82f6;
+      font-size: 9pt;
+    }
+
+    .bullets strong {
+      color: #1e3a5f;
+      font-weight: 600;
+    }
+
+    /* Skills */
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .skill-label {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #1e3a5f;
+      min-width: 80px;
+      padding-top: 4px;
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 8.5pt;
+      border-radius: 4px;
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+
+    .pill-primary {
+      background: #eff6ff;
+      color: #1e40af;
+      border-color: #bfdbfe;
+    }
+
+    .pill-green {
+      background: #f0fdf4;
+      color: #166534;
+      border-color: #bbf7d0;
+    }
+
+    .pill-purple {
+      background: #faf5ff;
+      color: #7c3aed;
+      border-color: #e9d5ff;
+    }
+
+    .pill-orange {
+      background: #fff7ed;
+      color: #c2410c;
+      border-color: #fed7aa;
+    }
+
+    /* Projects */
+    .project-item {
+      margin-bottom: 12px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .project-name {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #1e3a5f;
+    }
+
+    .project-link {
+      font-size: 8.5pt;
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .project-desc {
+      font-size: 9pt;
+      color: #4b5563;
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tech-tag {
+      font-size: 7.5pt;
+      padding: 2px 6px;
+      background: #f3f4f6;
+      color: #6b7280;
+      border-radius: 3px;
+    }
+
+    /* Education */
+    .education-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .education-main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .school {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #1e3a5f;
+    }
+
+    .degree {
+      font-size: 9pt;
+      color: #4b5563;
+    }
+
+    .degree-focus {
+      color: #3b82f6;
+      font-weight: 500;
+    }
+
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="resume" id="resume">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="name">Nunnabhatla Kali Charan</h1>
+      <p class="title">Full-Stack Developer & AI Engineer</p>
+      <div class="contact-row">
+        <a href="mailto:charannunnabhatla@gmail.com">charannunnabhatla@gmail.com</a>
+        <span class="separator">|</span>
+        <span>Hyderabad, India</span>
+        <span class="separator">|</span>
+        <a href="https://linkedin.com/in/charan-nunnabhatla">linkedin.com/in/charan-nunnabhatla</a>
+        <span class="separator">|</span>
+        <a href="https://github.com/charan-nunnabhatla">github.com/charan-nunnabhatla</a>
+        <span class="separator">|</span>
+        <a href="https://charan-nunnabhatla.github.io/about">charan-nunnabhatla.github.io/about</a>
+      </div>
+    </header>
+
+    <!-- Summary -->
+    <section class="section">
+      <h2 class="section-title">Profile</h2>
+      <p class="summary">
+        Software Developer who ships. Built systems serving <strong>500+ healthcare users</strong>, automated <strong>50,000+ patient record</strong> migrations, and cut API overhead by <strong>60%</strong>. I turn complex requirements into production code that scales—from conversational AI to HIPAA-compliant platforms.
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <span class="company">VectorSoft</span>
+          <span class="date">Mar 2025 – Present</span>
+        </div>
+        <p class="role">Software Developer</p>
+        <ul class="bullets">
+          <li>Cut clinic onboarding time by <strong>90%</strong> through automated migration of <strong>50,000+</strong> patient records from legacy EHR systems</li>
+          <li>Built authentication system handling <strong>500+</strong> concurrent healthcare users with <strong>zero security incidents</strong> across multi-tenant platform</li>
+          <li>Reduced API overhead by <strong>60%</strong> via intelligent caching architecture, improving response times for daily clinical workflows</li>
+          <li>Shipped <strong>5+ production applications</strong> (web, mobile, desktop) including telehealth and e-prescribing integrations</li>
+          <li>Designed <strong>17-module API architecture</strong> achieving HIPAA compliance across <strong>15+</strong> partner clinics</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-row">
+          <span class="skill-label">Frontend</span>
+          <div class="skill-pills">
+            <span class="pill pill-primary">React</span>
+            <span class="pill pill-primary">Next.js</span>
+            <span class="pill pill-primary">TypeScript</span>
+            <span class="pill pill-primary">Tailwind CSS</span>
+            <span class="pill pill-primary">React Native</span>
+            <span class="pill pill-primary">Tauri</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Backend</span>
+          <div class="skill-pills">
+            <span class="pill pill-green">Node.js</span>
+            <span class="pill pill-green">Python</span>
+            <span class="pill pill-green">MongoDB</span>
+            <span class="pill pill-green">PostgreSQL</span>
+            <span class="pill pill-green">REST APIs</span>
+            <span class="pill pill-green">WebSockets</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">AI & Cloud</span>
+          <div class="skill-pills">
+            <span class="pill pill-purple">AWS Bedrock</span>
+            <span class="pill pill-purple">Ollama</span>
+            <span class="pill pill-purple">LangChain</span>
+            <span class="pill pill-orange">EC2</span>
+            <span class="pill pill-orange">S3</span>
+            <span class="pill pill-orange">Cognito</span>
+            <span class="pill pill-orange">DynamoDB</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Tools</span>
+          <div class="skill-pills">
+            <span class="pill">Git</span>
+            <span class="pill">Docker</span>
+            <span class="pill">FHIR</span>
+            <span class="pill">HIPAA</span>
+            <span class="pill">OAuth 2.0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name">Healthcare Platform</span>
+          <span class="project-link">VectorSoft</span>
+        </div>
+        <p class="project-desc">AI-powered clinical workflow automation serving 500+ users across 15+ clinics. Features conversational AI for patient intake, automated transcription, and HIPAA-compliant infrastructure.</p>
+        <div class="project-tech">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Next.js</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">Conversational AI</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name">Grocery Webapp</span>
+          <a class="project-link" href="https://charan-nunnabhatla.github.io/e-commerce/">→ Live Demo</a>
+        </div>
+        <p class="project-desc">Full-stack e-commerce with cart persistence, real-time inventory sync, and complete checkout flow. Deep-dive into production patterns.</p>
+        <div class="project-tech">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">Express</span>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name">Dotted Life</span>
+          <a class="project-link" href="https://charan-nunnabhatla.github.io/dotted-life/">→ Live Demo</a>
+        </div>
+        <p class="project-desc">Interactive visualization that transforms your entire lifespan into an intuitive dot-based display. See your life on one screen.</p>
+        <div class="project-tech">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Canvas API</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="education-item">
+        <div class="education-main">
+          <span class="school">St. Mary's Engineering College</span>
+          <span class="degree">B.Tech Computer Science & Engineering <span class="degree-focus">· AI & ML</span></span>
+        </div>
+        <span class="date">2020 – 2024</span>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

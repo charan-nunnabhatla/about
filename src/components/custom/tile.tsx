@@ -1,6 +1,7 @@
 interface cardDetails {
   title: string;
-  sub_title: string;
+  sub_title?: string;
+  bullets?: string[];
   date: string;
   link?: string | undefined;
   thumbnail?: string | undefined;
@@ -44,7 +45,23 @@ export default function Tile(props: cardDetails) {
               </svg>
             ) : null}
           </h3>
-          <p className="text-[var(--medium-text)] text-sm sm:text-base md:text-lg mb-2">{props.sub_title}</p>
+          {props.sub_title && (
+            <p className="text-[var(--medium-text)] text-sm sm:text-base md:text-lg mb-2">{props.sub_title}</p>
+          )}
+          {props.bullets && props.bullets.length > 0 && (
+            <ul className="space-y-2 mt-2">
+              {props.bullets.map((bullet, index) => (
+                <li key={index} className="flex gap-3 text-[var(--medium-text)] text-sm sm:text-base">
+                  <span className="text-[var(--accent-blue)] mt-1.5 flex-shrink-0">
+                    <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
+                      <circle cx="3" cy="3" r="3" />
+                    </svg>
+                  </span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
         <section className="flex items-center text-[var(--medium-text)] text-xs sm:text-sm md:text-base font-medium">
           {props.date}

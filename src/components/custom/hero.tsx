@@ -1,28 +1,128 @@
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowDown, FileText } from "lucide-react";
+
 export default function Hero() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const scrollToWork = () => {
+    document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div
+    <section
       id="hero"
-      className="flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 md:pb-20">
-      <div className="max-w-4xl w-full">
-        <div className="flex flex-col md:flex-row items-center md:items-center gap-6 sm:gap-8 md:gap-12">
-          <img
-            className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full object-cover flex-shrink-0"
-            src="/about/IMG_1614.png"
-            alt="Charan Nunnabhatla"
-          />
-          <div className="flex-1 text-center md:text-left">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-[var(--near-black)] mb-3 sm:mb-4 tracking-tight leading-none" style={{fontFamily: "'Caveat', cursive", fontWeight: 700, textShadow: '4px 4px 8px rgba(0, 0, 0, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.2)'}}>
-              Charan
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-[var(--medium-text)] font-normal mb-4 sm:mb-6">
-              Software Developer
-            </p>
-            <p className="text-sm sm:text-base md:text-lg text-[var(--medium-text)] leading-relaxed max-w-2xl mx-auto md:mx-0">
-              AI Solutions Developer specializing in conversational AI, workflow automation, and intelligent healthcare systems
-            </p>
-          </div>
-        </div>
+      className="relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-24"
+    >
+      {/* Subtle gradient orb in background */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[var(--accent)] opacity-[0.03] rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-4xl w-full relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={mounted ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-6"
+        >
+          <span className="text-[var(--text-muted)] text-sm font-mono tracking-wide">
+            Hi, I'm
+          </span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={mounted ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-[var(--text-primary)] mb-6 tracking-tight"
+        >
+          Charan Nunnabhatla
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={mounted ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-6"
+        >
+          <span className="gradient-text">I build AI that makes healthcare faster.</span>
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={mounted ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl mb-8 md:mb-10"
+        >
+          Full-stack engineer crafting HIPAA-compliant systems that serve{" "}
+          <span className="text-[var(--text-primary)] font-medium">500+ users</span> and
+          process{" "}
+          <span className="text-[var(--text-primary)] font-medium">50,000+ patient records</span>.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={mounted ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 sm:mb-12"
+        >
+          <button
+            onClick={scrollToWork}
+            className="btn-primary group justify-center"
+          >
+            View My Work
+            <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+          </button>
+          <a
+            href="/about/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary group justify-center"
+          >
+            <FileText className="w-4 h-4" />
+            Download Resume
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={mounted ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[var(--text-muted)]"
+        >
+          <span className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            Currently @ VectorSoft
+          </span>
+          <span className="hidden sm:inline text-[var(--border-hover)]">·</span>
+          <span>Hyderabad, India</span>
+          <span className="hidden sm:inline text-[var(--border-hover)]">·</span>
+          <span className="text-[var(--accent)]">Open to opportunities</span>
+        </motion.div>
       </div>
-    </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={mounted ? { opacity: 1 } : {}}
+        transition={{ duration: 0.5, delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-6 h-10 rounded-full border-2 border-[var(--border-hover)] flex items-start justify-center p-2"
+        >
+          <motion.div
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-1 h-2 rounded-full bg-[var(--text-muted)]"
+          />
+        </motion.div>
+      </motion.div>
+    </section>
   );
 }

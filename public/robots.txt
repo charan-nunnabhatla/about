@@ -1,0 +1,11 @@
+# robots.txt for Charan Nunnabhatla Portfolio
+# https://charan-nunnabhatla.github.io/about/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://charan-nunnabhatla.github.io/about/sitemap.xml
+
+# Crawl-delay (optional, be polite to crawlers)
+Crawl-delay: 1
