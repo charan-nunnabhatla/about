@@ -1,6 +1,7 @@
 import BlurFade from "../ui/blur-fade";
 import { Mail, Copy, Linkedin, FileText, MapPin, Check } from "lucide-react";
 import { useState } from "react";
+import { downloadResume } from "../../utils/downloadResume";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -12,15 +13,6 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const downloadResume = () => {
-    const filePath = "/about/resume.pdf";
-    const link = document.createElement("a");
-    link.href = filePath;
-    link.download = "Charan_Nunnabhatla_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <section id="contact" className="px-4 sm:px-6 md:px-12 lg:px-24 py-16 md:py-28">

@@ -1,11 +1,7 @@
 import BlurFade from "../ui/blur-fade";
+import { cvData } from "../../data/cv";
 
-const stats = [
-  { value: "500+", label: "Concurrent Users" },
-  { value: "50,000+", label: "Patient Records" },
-  { value: "90%", label: "Automation Rate" },
-  { value: "60%", label: "API Optimization" },
-];
+const stats = cvData.stats;
 
 export default function About() {
   return (

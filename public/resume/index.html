@@ -72,12 +72,9 @@
     }
 
     .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
       font-size: 9pt;
       color: #4b5563;
+      line-height: 1.8;
     }
 
     .contact-row a {
@@ -92,7 +89,8 @@
 
     .separator {
       color: #d1d5db;
-      margin: 0 4px;
+      margin: 0 6px;
+      display: inline;
     }
 
     /* Section */
@@ -131,10 +129,16 @@
     }
 
     .experience-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
       margin-bottom: 3px;
+      overflow: hidden;
+    }
+
+    .experience-header .company {
+      float: left;
+    }
+
+    .experience-header .date {
+      float: right;
     }
 
     .company {
@@ -185,34 +189,34 @@
 
     /* Skills */
     .skills-container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      /* Removed flex for PDF compatibility */
     }
 
     .skill-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
     }
 
     .skill-label {
       font-size: 9pt;
       font-weight: 700;
       color: #1e3a5f;
-      min-width: 80px;
+      display: inline-block;
+      width: 80px;
+      vertical-align: top;
       padding-top: 4px;
     }
 
     .skill-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+      display: inline-block;
+      width: calc(100% - 90px);
+      vertical-align: top;
     }
 
     .pill {
       display: inline-block;
       padding: 4px 10px;
+      margin: 2px 4px 2px 0;
       font-size: 8.5pt;
       border-radius: 4px;
       background: #f1f5f9;
@@ -250,10 +254,16 @@
     }
 
     .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
       margin-bottom: 3px;
+      overflow: hidden;
+    }
+
+    .project-header .project-name {
+      float: left;
+    }
+
+    .project-header .project-link {
+      float: right;
     }
 
     .project-name {
@@ -281,14 +291,15 @@
     }
 
     .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
+      margin-top: 4px;
     }
 
     .tech-tag {
+      display: inline-block;
       font-size: 7.5pt;
       padding: 2px 6px;
+      margin-right: 4px;
+      margin-bottom: 4px;
       background: #f3f4f6;
       color: #6b7280;
       border-radius: 3px;
@@ -296,14 +307,15 @@
 
     /* Education */
     .education-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
+      overflow: hidden;
     }
 
     .education-main {
-      display: flex;
-      flex-direction: column;
+      float: left;
+    }
+
+    .education-item .date {
+      float: right;
     }
 
     .school {
@@ -360,13 +372,15 @@
       <div class="experience-item">
         <div class="experience-header">
           <span class="company">VectorSoft</span>
-          <span class="date">Mar 2025 – Present</span>
+          <span class="date">Feb 2025 – Present</span>
         </div>
         <p class="role">Software Developer</p>
         <ul class="bullets">
           <li>Cut clinic onboarding time by <strong>90%</strong> through automated migration of <strong>50,000+</strong> patient records from legacy EHR systems</li>
           <li>Built authentication system handling <strong>500+</strong> concurrent healthcare users with <strong>zero security incidents</strong> across multi-tenant platform</li>
           <li>Reduced API overhead by <strong>60%</strong> via intelligent caching architecture, improving response times for daily clinical workflows</li>
+          <li>Integrated <strong>custom CMS</strong> for CurerTech app enabling non-technical staff to manage content without developer intervention</li>
+          <li>Implemented <strong>robust error tracking</strong> using rrweb for session replay, enabling rapid bug diagnosis and reducing debugging time</li>
           <li>Shipped <strong>5+ production applications</strong> (web, mobile, desktop) including telehealth and e-prescribing integrations</li>
           <li>Designed <strong>17-module API architecture</strong> achieving HIPAA compliance across <strong>15+</strong> partner clinics</li>
         </ul>
@@ -416,6 +430,9 @@
           <div class="skill-pills">
             <span class="pill">Git</span>
             <span class="pill">Docker</span>
+            <span class="pill">Claude Code</span>
+            <span class="pill">Cursor</span>
+            <span class="pill">rrweb</span>
             <span class="pill">FHIR</span>
             <span class="pill">HIPAA</span>
             <span class="pill">OAuth 2.0</span>

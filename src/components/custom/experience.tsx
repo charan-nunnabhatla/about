@@ -1,22 +1,18 @@
 import BlurFade from "../ui/blur-fade";
 import { Briefcase } from "lucide-react";
+import { cvData } from "../../data/cv";
 
-const experiences = [
-  {
-    title: "Software Developer",
-    company: "VectorSoft",
-    date: "Mar 2025 - Present",
-    current: true,
-    bullets: [
-      "Cut clinic onboarding time by 90% through automated migration of 50,000+ patient records from legacy EHR systems",
-      "Built authentication system handling 500+ concurrent healthcare users with zero security incidents across multi-tenant platform",
-      "Reduced API overhead by 60% via intelligent caching architecture, improving response times for daily clinical workflows",
-      "Shipped 5+ production applications (web, mobile, desktop) including telehealth and e-prescribing integrations",
-      "Designed 17-module API architecture achieving HIPAA compliance across 15+ partner clinics",
-    ],
-    tech: ["React", "Next.js", "TypeScript", "AWS", "MongoDB", "Node.js"],
-  },
-];
+// Transform CV data to component format
+const experiences = cvData.experience.map((exp) => ({
+  title: exp.role,
+  company: exp.company,
+  date: `${exp.startDate} - ${exp.endDate}`,
+  current: exp.endDate === "Present",
+  bullets: exp.highlights.map((h) => h.text),
+  tech: Object.values(cvData.skills)
+    .flatMap((s) => s.items)
+    .slice(0, 7), // Show first 7 skills as tech
+}));
 
 export default function Experience() {
   return (

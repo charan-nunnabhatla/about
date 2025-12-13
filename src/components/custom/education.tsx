@@ -1,14 +1,13 @@
 import BlurFade from "../ui/blur-fade";
 import { GraduationCap } from "lucide-react";
+import { cvData } from "../../data/cv";
 
-const education = [
-  {
-    school: "St. Mary's Engineering College",
-    degree: "B.Tech Computer Science & Engineering",
-    focus: "AI & ML",
-    date: "2020 - 2024",
-  },
-];
+const education = cvData.education.map((edu) => ({
+  school: edu.institution,
+  degree: edu.degree,
+  focus: edu.specialization,
+  date: edu.startYear ? `${edu.startYear} - ${edu.endYear}` : edu.endYear,
+}));
 
 export default function Education() {
   return (

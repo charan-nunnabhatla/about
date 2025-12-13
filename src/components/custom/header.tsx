@@ -4,9 +4,10 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#tech-stack" },
   { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#tech-stack" },
   { label: "Projects", href: "#projects" },
+  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -20,13 +21,20 @@ export default function Header() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
+      // Check if at bottom of page - activate Contact
+      const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+      if (isAtBottom) {
+        setActiveSection("contact");
+        return;
+      }
+
       // Detect active section
       const sections = navItems.map(item => item.href.replace("#", ""));
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 100) {
+          if (rect.top <= 150) {
             setActiveSection(section);
             break;
           }
@@ -54,7 +62,7 @@ export default function Header() {
       ref={menuRef}
       className={`fixed top-0 left-0 right-0 z-[999997] transition-all duration-300 ${
         scrolled
-          ? "bg-[var(--background)]/80 backdrop-blur-xl border-b border-[var(--border)]"
+          ? "bg-[var(--background)] backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >

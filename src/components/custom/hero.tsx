@@ -1,13 +1,37 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, FileText } from "lucide-react";
+import { downloadResume } from "../../utils/downloadResume";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(false);
+  const [initialDelayPassed, setInitialDelayPassed] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+
+    // Show scroll indicator after 5 seconds on first landing
+    const showTimeout = setTimeout(() => {
+      setInitialDelayPassed(true);
+      if (window.scrollY < 100) {
+        setShowScrollIndicator(true);
+      }
+    }, 5000);
+
+    const handleScroll = () => {
+      // Only respond to scroll after initial delay has passed
+      if (initialDelayPassed) {
+        setShowScrollIndicator(window.scrollY < 100);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      clearTimeout(showTimeout);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [initialDelayPassed]);
 
   const scrollToWork = () => {
     document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
@@ -76,15 +100,13 @@ export default function Hero() {
             View My Work
             <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
           </button>
-          <a
-            href="/about/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={downloadResume}
             className="btn-secondary group justify-center"
           >
             <FileText className="w-4 h-4" />
             Download Resume
-          </a>
+          </button>
         </motion.div>
 
         <motion.div
@@ -106,10 +128,13 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={mounted ? { opacity: 1 } : {}}
-        transition={{ duration: 0.5, delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: mounted && showScrollIndicator ? 1 : 0,
+          y: mounted && showScrollIndicator ? 0 : 10
+        }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-none"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
