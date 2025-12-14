@@ -14,12 +14,12 @@ const projects = [
     company: "VectorSoft LLC",
   },
   {
-    title: "Grocery Webapp",
-    description: "Full-stack e-commerce with cart persistence, inventory sync, and checkout flows. My deep-dive into production patterns.",
+    title: "PrimeCart",
+    description: "Full-stack inventory management system with role-based access, real-time stock tracking, and multi-currency support. Production-grade patterns.",
     icon: ShoppingCart,
-    date: "Mar 2024",
-    link: "https://charan-nunnabhatla.github.io/e-commerce/",
-    tech: ["React", "Node.js", "MongoDB", "Express"],
+    date: "Dec 2024",
+    link: "https://primecarts.vercel.app/",
+    tech: ["Next.js", "TypeScript", "MongoDB", "NextAuth"],
     gradient: "from-emerald-500/20 to-teal-500/20",
   },
   {

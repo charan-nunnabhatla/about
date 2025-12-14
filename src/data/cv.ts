@@ -92,12 +92,12 @@ export const cvData = {
       liveUrl: null,
     },
     {
-      name: "Grocery Webapp",
+      name: "PrimeCart",
       company: null,
       description:
-        "Full-stack e-commerce with cart persistence, real-time inventory sync, and complete checkout flow. Deep-dive into production patterns.",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-      liveUrl: "https://charan-nunnabhatla.github.io/e-commerce/",
+        "Full-stack inventory management system with role-based access, real-time stock tracking, multi-currency support, and audit logging.",
+      tech: ["Next.js", "TypeScript", "MongoDB", "NextAuth"],
+      liveUrl: "https://primecarts.vercel.app/",
     },
     {
       name: "Dotted Life",
