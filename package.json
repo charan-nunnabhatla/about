@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "git push -u origin master && gh-pages -d dist"
+    "deploy": "npm run build && cd dist && rm -rf .git && git init && git add -A && git commit -m 'Deploy' && git branch -M gh-pages && git remote add origin https://github.com/charan-nunnabhatla/about.git && git push -f origin gh-pages"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

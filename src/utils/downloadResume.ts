@@ -62,20 +62,41 @@ export const downloadResume = () => {
   doc.text(cvData.personal.title, margin, y);
   y += 8;
 
-  // Contact info
+  // Contact info with clickable links
   setFont("normal", 9, colors.grayText);
-  const contactInfo = [
-    cvData.personal.email,
-    cvData.personal.location,
-    cvData.personal.linkedin,
-    cvData.personal.github,
-    cvData.personal.website,
-  ].join("  |  ");
-  const contactLines = wrapText(contactInfo, contentWidth, 9);
-  contactLines.forEach((line) => {
-    doc.text(line, margin, y);
-    y += 4;
-  });
+  let x = margin;
+  const separator = "  |  ";
+
+  // Email
+  doc.text(cvData.personal.email, x, y);
+  x += doc.getTextWidth(cvData.personal.email);
+  doc.text(separator, x, y);
+  x += doc.getTextWidth(separator);
+
+  // Location
+  doc.text(cvData.personal.location, x, y);
+  x += doc.getTextWidth(cvData.personal.location);
+  doc.text(separator, x, y);
+  x += doc.getTextWidth(separator);
+
+  // LinkedIn (clickable)
+  doc.setTextColor(...colors.blue);
+  doc.textWithLink(cvData.personal.linkedin, x, y, { url: cvData.personal.linkedinUrl });
+  x += doc.getTextWidth(cvData.personal.linkedin);
+  doc.setTextColor(...colors.grayText);
+  doc.text(separator, x, y);
+  x += doc.getTextWidth(separator);
+
+  // GitHub (clickable)
+  doc.setTextColor(...colors.blue);
+  doc.textWithLink(cvData.personal.github, x, y, { url: cvData.personal.githubUrl });
+  y += 4;
+
+  // Website on next line (clickable)
+  doc.setTextColor(...colors.blue);
+  doc.textWithLink(cvData.personal.website, margin, y, { url: cvData.personal.websiteUrl });
+  doc.setTextColor(...colors.grayText);
+  y += 4;
   y += 2;
 
   // Header border
@@ -183,7 +204,9 @@ export const downloadResume = () => {
 
     if (project.liveUrl) {
       setFont("normal", 8, colors.blue);
-      doc.text("→ Live Demo", pageWidth - margin, y, { align: "right" });
+      const linkText = "↗ Live Demo";
+      const linkWidth = doc.getTextWidth(linkText);
+      doc.textWithLink(linkText, pageWidth - margin - linkWidth, y, { url: project.liveUrl });
     } else if (project.company) {
       setFont("normal", 8, colors.lightGray);
       doc.text(project.company, pageWidth - margin, y, { align: "right" });

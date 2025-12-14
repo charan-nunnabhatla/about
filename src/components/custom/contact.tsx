@@ -99,7 +99,7 @@ export default function Contact() {
               </div>
             </a>
 
-            {/* Resume */}
+            {/* CV */}
             <button
               onClick={downloadResume}
               className="group flex items-center gap-3 p-4 bg-[var(--surface)] border border-[var(--border)] rounded-xl hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all card-hover text-left"
@@ -108,7 +108,7 @@ export default function Contact() {
                 <FileText className="w-5 h-5 text-emerald-400" />
               </div>
               <div>
-                <p className="text-sm font-medium text-[var(--text-primary)]">Resume</p>
+                <p className="text-sm font-medium text-[var(--text-primary)]">CV</p>
                 <p className="text-xs text-[var(--text-muted)]">Download PDF</p>
               </div>
             </button>

@@ -105,7 +105,7 @@ export default function Hero() {
             className="btn-secondary group justify-center"
           >
             <FileText className="w-4 h-4" />
-            Download Resume
+            Download CV
           </button>
         </motion.div>
 
